@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- Website - www.codingnepalweb.com -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Login & Registration in HTML, to styling it with CSS and adding with JavaScript."
+    />
+    <meta
+      name="keywords"
+      content="Animated Login & Registration Form."/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    />
+
+    <title>Login & Signup Form</title>
+    <link rel="stylesheet" href="css/form.css" />
+    <script src="../custom-scripts.js" defer></script>
+  </head>
+  <body>
+    <section class="wrapper">
+      <div class="form signup">
+        <header>Insription</header>
+        <form action="../hassan_el_annabi/signup_form.php" method="post">
+            <input type="text" name="nom" placeholder="Nom complet" required />
+            <input type="email" name="email" placeholder="Adresse email" required />
+            <input type="password" name="password" placeholder="Mot de passe" required />
+            <div class="checkbox">
+                <input type="checkbox" id="signupCheck" />
+                <label for="signupCheck">J'accepte tous les termes et conditions</label>
+            </div>
+            <input type="submit" value="S'inscrire" />
+        </form>
+      </div>
+     
+
+      <div class="form login">
+        <header>Connexion</header>
+        <form action="../hassan_el_annabi/login_form.php" method="post">
+          <input type="text" name="email" placeholder="Adresse email" required />
+          <input type="password" name="password" placeholder="Mot de passe" required />
+          <input type="radio" name="role" id="dot-1" value="professeur" />
+          <input type="radio" name="role" id="dot-2" value="eleve" />
+          <span class="role-title">Inscrire en tant que:</span>
+          <div class="category">
+            <label for="dot-1">
+              <span class="dot one"></span>
+              <span class="role">Professeur</span>
+            </label>
+            <label for="dot-2">
+              <span class="dot two"></span>
+              <span class="role">Eleve</span>
+            </label>
+          </div>
+          <input type="submit" value="Se connecter" />
+        </form>
+    </div>
+
+
+      <script>
+        const wrapper = document.querySelector(".wrapper"),
+          signupHeader = document.querySelector(".signup header"),
+          loginHeader = document.querySelector(".login header");
+
+        loginHeader.addEventListener("click", () => {
+          wrapper.classList.add("active");
+        });
+        signupHeader.addEventListener("click", () => {
+          wrapper.classList.remove("active");
+        });
+      </script>
+    </section>
+  </body>
+</html>
